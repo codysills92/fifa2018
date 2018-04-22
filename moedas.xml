@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moedas>
+  <moeda>
+    <nome>Euro</nome>
+    <valor>EUR</valor>
+  </moeda>
+  <moeda>
+    <nome>Libra Esterlina</nome>
+    <valor>GBP</valor>
+  </moeda>
+  <moeda>
+    <nome>U.S. Dollar</nome>
+    <valor>USD</valor>
+  </moeda>
+  <moeda>
+    <nome>Iene</nome>
+    <valor>JPY</valor>
+  </moeda>
+  <moeda>
+    <nome>Brazilian Real</nome>
+    <valor>BRL</valor>
+  </moeda>
+</moedas>
