@@ -5,4 +5,5 @@ To install in your pc, just download the project and execute the file "wc_bd.sql
 # 2º
 Edit "mysq.connect.php" file to set the name of the server and other needed parameters
 # 3º
-Login
+Enable your web server
+php -S localhost:port
