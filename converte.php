@@ -36,11 +36,12 @@
                     include_once './menuVerticalFerramentas.php';
                     if (isset($_POST['de'])) {
                         $parametros = array(
-                            'FromCurrency' => $_POST['de'],
-                            'ToCurrency' => $_POST['para']
+                            'CurrencyFrom' => $_POST['de'],
+                            'CurrencyTo' => $_POST['para'],
+                            'RateDate'=> date("d/m/Y")
                         );
-                        $soap = new SoapClient('http://www.webservicex.net/CurrencyConvertor.asmx?WSDL');
-                        $resposta = $soap->ConversionRate($parametros)->ConversionRateResult;
+                        $soap = new SoapClient('http://currencyconverter.kowabunga.net//converter.asmx/GetConversionRate');
+                        $resposta = $soap->GetConversionRate($parametros)->GetConversionRateResult;
 
                         $resultado = $_POST['montante'] * $resposta;
                         echo "<script>window.alert('$resultado');</script>";
