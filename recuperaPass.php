@@ -61,9 +61,9 @@ João silva , João Gomes, Mario Cardoso
     
     
     $query = "SELECT * FROM `utilizador` WHERE `username` = '$username' AND `email` = '$email'";
-    $result = mysql_query($query, $ligacao);
-    mysql_close($ligacao);
-    if(mysql_num_rows($result)==0){
+    $result = mysqli_query($ligacao,$query);
+    mysqli_close($ligacao);
+    if(mysqli_num_rows($result)==0){
         ?> <script>alert("Lamentamos mas este utilizador nao consta na nossa base dados se considera que é um erro nosso por favor contacte suportefifa2018@gmail.com")</script>
     <?php }
     else{
@@ -71,8 +71,8 @@ João silva , João Gomes, Mario Cardoso
    $encripta = md5($pass1);
     $ligacao = ligar_base_dados();
     $query1 = ("UPDATE `wc_bd`.`utilizador` SET `password` = '$encripta',`nr_acessos`= '0' WHERE `utilizador`.`username` = '$username';");
-    $resultado = mysql_query($query1, $ligacao);
-    mysql_close($ligacao);
+    $resultado = mysqli_query($query1, $ligacao);
+    mysqli_close($ligacao);
     $subject= 'Recuperar conta';
     $message ="$username, Recebemos um pedido para aceder a sua conta, o seu codigo de acesso é = $pass1";
     $nome = "TEAM PW";

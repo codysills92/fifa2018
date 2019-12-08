@@ -52,7 +52,7 @@
                     </tr>
 
                     <?php
-                    while ($rows = mysql_fetch_array($result)) {
+                    while ($rows = mysqli_fetch_array($result)) {
                         ?>
 
                         <tr>

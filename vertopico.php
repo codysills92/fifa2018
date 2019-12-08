@@ -41,7 +41,7 @@
         $id = $_GET['id'];
 
         $result = listar_topico($id, $tbl);
-        $rows = mysql_fetch_array($result);
+        $rows = mysqli_fetch_array($result);
         ?>
 
         <table class="tabela" >
@@ -78,7 +78,7 @@
 
         $result2 = listar_topico($id, $tbls);
 
-        while ($rows2 = mysql_fetch_array($result2)) {
+        while ($rows2 = mysqli_fetch_array($result2)) {
             ?>
 
             <table class="table" >

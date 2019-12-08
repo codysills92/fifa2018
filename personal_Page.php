@@ -46,14 +46,14 @@
 
             $pass2 = md5($pass1);
 
-            $sq = mysql_query("SELECT password FROM utilizador WHERE `username` = '$username' ");
-            while ($dad = mysql_fetch_array($sq)) {
+            $sq = mysqli_query("SELECT password FROM utilizador WHERE `username` = '$username' ");
+            while ($dad = mysqli_fetch_array($sq)) {
                 $pas = $dad['password'];
             }
             if (empty($pass2)) {
                 $sqw = "UPDATE `utilizador` SET username='$username',endereco = '$endereco',nome='$nome',data_nascimento='$data', email = '$mailing' WHERE `username` = '$username' ";
-                if (!mysql_query($sqw)) {
-                    die('Error: ' . mysql_error());
+                if (!mysqli_query($sqw)) {
+                    die('Error: ' . mysqli_error());
                     ?> <script> alert("Alteração sem sucesso!");</script> <?php }
                 ?> <script>alert("Alteração com sucesso!");</script>
 
@@ -64,8 +64,8 @@
                 $sqw = "UPDATE `utilizador` SET username='$username',endereco = '$endereco',nome='$nome',data_nascimento='$data', email = '$mailing', password = '$pass2' WHERE `username` = '$username' ";
 
 
-                if (!mysql_query($sqw)) {
-                    die('Error: ' . mysql_error());
+                if (!mysqli_query($sqw)) {
+                    die('Error: ' . mysqli_error());
                     ?> <script> alert("Alteração sem sucesso!");</script> <?php }
                 ?> <script>alert("Alteração com sucesso!");</script> 
                 <?php
@@ -78,8 +78,8 @@
 
 
         <?php
-        $query = mysql_query("SELECT * FROM utilizador WHERE username='$username'");
-        while ($w = mysql_fetch_array($query)) {
+        $query = mysqli_query("SELECT * FROM utilizador WHERE username='$username'");
+        while ($w = mysqli_fetch_array($query)) {
             $nombre = $w['nome'];
             $unombre = $w['username'];
             $mail = $w['email'];

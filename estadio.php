@@ -57,7 +57,7 @@
 
 
 
-                    while ($row = mysql_fetch_array($final)) {
+                    while ($row = mysqli_fetch_array($final)) {
                         echo "<tr>";
                         echo "<td>" . $row['nome'] . "</td>";
                      
