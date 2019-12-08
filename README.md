@@ -1,5 +1,5 @@
 # fifawc2018
-Platform to simulate the Fifa WC 2018-Russia - Old Project
+Platform to simulate the Fifa WC 2018-Russia - FirstWebDev Project (2014/2015)
 # 1º
 To install in your pc, just download the project and execute the file "wc_bd.sql" in your database server
 # 2º
