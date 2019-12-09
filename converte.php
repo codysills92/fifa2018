@@ -40,7 +40,7 @@
                             'CurrencyTo' => $_POST['para'],
                             'RateDate'=> date("d/m/Y")
                         );
-                        $soap = new SoapClient('http://currencyconverter.kowabunga.net//converter.asmx/GetConversionRate');
+                        $soap = new SoapClient('http://currencyconverter.kowabunga.net/converter.asmx/GetConversionRate?wsdl');
                         $resposta = $soap->GetConversionRate($parametros)->GetConversionRateResult;
 
                         $resultado = $_POST['montante'] * $resposta;
