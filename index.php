@@ -8,22 +8,22 @@
 
         <script type="text/javascript">
             function TrocarFoto2() {
-                document.getElementById('img1').src = "estadio2.jpg";
+                document.getElementById('img1').src = "./img/estadio2.jpg";
             }
             function TrocarFoto3() {
-                document.getElementById('img1').src = "estadio3.jpg";
+                document.getElementById('img1').src = "./img/estadio3.jpg";
             }
             function TrocarFoto4() {
-                document.getElementById('img1').src = "estadio4.jpg";
+                document.getElementById('img1').src = "./img/estadio4.jpg";
             }
             function TrocarFoto5() {
-                document.getElementById('img1').src = "estadio5.jpg";
+                document.getElementById('img1').src = "./img/estadio5.jpg";
             }
             function TrocarFoto6() {
-                document.getElementById('img1').src = "estadio6.jpg";
+                document.getElementById('img1').src = "./img/estadio6.jpg";
             }
             function VoltarFoto1() {
-                document.getElementById('img1').src = "estadio1.jpg";
+                document.getElementById('img1').src = "./img/estadio1.jpg";
             }
 
         </script>
@@ -46,7 +46,7 @@
 
                     <h3>Noticias</h3>
 <?php 
-                    include './feeds.php';
+                    include 'feeds.php';
                     ?>
 
                 </div>
@@ -64,24 +64,24 @@
                          <h1>Galeria: Estádios</h1>
                         <tr>
                             <td colspan="5" align="center">
-                                <img src="estadio1.jpg" id="img1" width="500" height="250" />
+                                <img src="./img/estadio1.jpg" id="img1" width="500" height="250" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <img src="estadio2.jpg" id="img2" width="100" height="100" onclick="TrocarFoto2()" />
+                                <img src="./img/estadio2.jpg" id="img2" width="100" height="100" onclick="TrocarFoto2()" />
                             </td>
                             <td>
-                                <img src="estadio3.jpg" id="img3" width="100" height="100" onclick="TrocarFoto3()" />
+                                <img src="./img/estadio3.jpg" id="img3" width="100" height="100" onclick="TrocarFoto3()" />
                             </td>
                             <td>
-                                <img src="estadio4.jpg" id="img4" width="100" height="100" onclick="TrocarFoto4()" />
+                                <img src="./img/estadio4.jpg" id="img4" width="100" height="100" onclick="TrocarFoto4()" />
                             </td>
                             <td>
-                                <img src="estadio5.jpg" id="img2" width="100" height="100" onclick="TrocarFoto5()" />
+                                <img src="./img/estadio5.jpg" id="img2" width="100" height="100" onclick="TrocarFoto5()" />
                             </td>
                             <td>
-                                <img src="estadio6.jpg" id="img3" width="100" height="100" onclick="TrocarFoto6()" />
+                                <img src="./img/estadio6.jpg" id="img3" width="100" height="100" onclick="TrocarFoto6()" />
                             </td>
                         </tr>
                         

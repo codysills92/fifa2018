@@ -2,7 +2,7 @@
 if (isset($_COOKIE["fich"]))
     $nome = $_COOKIE["fich"];
 else {
-    $nome = "css.css";
+    $nome = "./css/css.css";
 }
 
 setcookie('fich', $nome, time() + 3600);

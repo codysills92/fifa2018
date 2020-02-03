@@ -36,15 +36,27 @@
                     include_once './menuVerticalFerramentas.php';
                     if (isset($_POST['de'])) {
                         $parametros = array(
-                            'CurrencyFrom' => $_POST['de'],
-                            'CurrencyTo' => $_POST['para'],
-                            'RateDate'=> date("d/m/Y")
+                            //'From' => $_POST['de'],
+                            'Currency' => $_POST['para'],
+                            'RateDate'=> date("d/m/Yz")
                         );
-                        $soap = new SoapClient('http://currencyconverter.kowabunga.net/converter.asmx/GetConversionRate?wsdl');
-                        $resposta = $soap->GetConversionRate($parametros)->GetConversionRateResult;
 
-                        $resultado = $_POST['montante'] * $resposta;
-                        echo "<script>window.alert('$resultado');</script>";
+                        $context = stream_context_create(
+                            array(
+                                'http' => array(
+                                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n , User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15",
+                                   'method'  => 'POST',
+                                    'content' => http_build_query($parametros)
+                                )
+                            )
+                        );
+                        
+
+                        $soap = file_get_contents('http://currencyconverter.kowabunga.net/converter.asmx/GetCurrencyRate', false, $context);
+                        //$resposta = $soap->GetCurrencyRate($parametros);
+                        echo print_r($soap);
+                       // $resultado = $_POST['montante'] * $resposta;
+                        //echo "<script>window.alert('$resultado + $resposta');</script>";
                     }
                     $moedas = get_moedas();
                     ?>
